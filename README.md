@@ -26,6 +26,7 @@ Steps:
 
 ## facebook_oauth Functions
 
+ Oauth.rb File
 
 <body>
 
@@ -39,8 +40,6 @@ Steps:
         token_res = JSON.parse(response.body)
         if (accessToken = token_res["access_token"])
           user = facebookAccessTokenCheck(accessToken)
-          user["expired_in"] = Time.at(token_res["expires_in"]).utc.strftime("%v,%I:%M%p")
-
         else
           user["res"] = token_res
           user["status"] = false
@@ -70,8 +69,6 @@ Steps:
          details["access_token"] = accessToken
          details["image"] = profile["picture"]["data"]["url"]
          details["provider"] = "facebook"
-         details["status"] = true
-
       rescue Exception => e
          details = e.message
          details["status"] = false
@@ -81,10 +78,38 @@ Steps:
       return details
   
   end 
-end
-	
-	
+
 </body>
+
+routes.rb File:
+
+<body>
+
+  post 'oauth' => "oauth#facebook_oauth"
+  
+</body>
+
+
+Sample Response:
+
+<body>
+
+  {
+    "status": true,
+    "details":
+    {
+        "unique_id": "123455",
+        "email": "your_fb_email_id",
+        "name": "your_fb_username",
+        "access_token": "your accesstoken",
+        "image": "your_profile_image_path",
+        "provider": "facebook",
+      }
+  }
+  
+</body>
+
+
 
 
 

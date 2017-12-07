@@ -1,6 +1,6 @@
 # README
 
-### Create Facebook Login for Web and Mobile Devices Using Ruby on Rails
+### Facebook Login for Web and Mobile Devices Using Ruby on Rails
 
 include the gem in your Gemfile:
 

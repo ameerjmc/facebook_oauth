@@ -50,7 +50,7 @@ Steps:
       user = Hash.new
       begin
         
-        response = RestClient.get "#{'https://graph.facebook.com/oauth/access_token?     client_id=1234&client_secret=1234&redirect_uri='}#{redirect_uri}#{'&code='}#{code}"
+          response = RestClient.get "#{'https://graph.facebook.com/oauth/access_token?client_id=1234&client_secret=1234&redirect_uri='}#{redirect_uri}#{'&code='}#{code}"
         token_res = JSON.parse(response.body)
         if (accessToken = token_res["access_token"])
           user = facebookAccessTokenCheck(accessToken)

@@ -1,24 +1,96 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Create Facebook Login for Web and Mobile Devices Using Ruby on Rails
 
-Things you may want to cover:
+include the gem in your Gemfile:
 
-* Ruby version
+<body>
 
-* System dependencies
+    gem 'rest-client'
+    
+</body>
 
-* Configuration
 
-* Database creation
+And then execute:
 
-* Database initialization
+ $ bundle install
+   
+Steps:
 
-* How to run the test suite
+1.rails g model oauth
 
-* Services (job queues, cache servers, search engines, etc.)
+2.rake db:migrate
 
-* Deployment instructions
+3.rails g controller oauth facebook_oauth
 
-* ...
+
+## facebook_oauth Functions
+
+
+<body>
+
+	 # Get accesstoken using facebook graph Api
+  def self.facebookAccessTokenCheckWithCode(code,redirect_uri)
+     
+      user = Hash.new
+      begin
+        
+        response = RestClient.get "#{'https://graph.facebook.com/oauth/access_token?     client_id=1234&client_secret=1234&redirect_uri='}#{redirect_uri}#{'&code='}#{code}"
+        token_res = JSON.parse(response.body)
+        if (accessToken = token_res["access_token"])
+          user = facebookAccessTokenCheck(accessToken)
+          user["expired_in"] = Time.at(token_res["expires_in"]).utc.strftime("%v,%I:%M%p")
+
+        else
+          user["res"] = token_res
+          user["status"] = false
+        end
+        
+      rescue Exception => e
+        user["message"] = e.message
+        user["status"] = false
+      end
+      
+      return user
+  
+  end
+  
+    # Get information from facebook using accessToken
+  def self.facebookAccessTokenCheck(accessToken)
+     
+     details = Hash.new
+      
+      begin
+         
+         response = RestClient.get "#{'https://graph.facebook.com/v2.8/me?fields=first_name,last_name,email,picture.type(small)&access_token='}#{accessToken}"
+         profile = JSON.parse(response.body)
+         details["unique_id"] =  profile['id']
+         details["email"] =  profile['email']
+         details["name"] = profile['first_name'] + profile["last_name"]
+         details["access_token"] = accessToken
+         details["image"] = profile["picture"]["data"]["url"]
+         details["provider"] = "facebook"
+         details["status"] = true
+
+      rescue Exception => e
+         details = e.message
+         details["status"] = false
+
+      end
+      
+      return details
+  
+  end 
+end
+	
+	
+</body>
+
+
+
+	
+
+
+
+
+

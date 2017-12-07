@@ -2,7 +2,6 @@
 
 ### Facebook Oauth
     
-    Create App for Facebook developer site:
 
 Steps:
 
@@ -108,22 +107,7 @@ Steps:
 
     Sample Response:
 
-<body>
 
-  {
-    "status": true,
-    "details":
-    {
-        "unique_id": "123455",
-        "email": "your_fb_email_id",
-        "name": "your_fb_username",
-        "access_token": "your accesstoken",
-        "image": "your_profile_image_path",
-        "provider": "facebook",
-      }
-  }
-  
-</body>
 
 
 

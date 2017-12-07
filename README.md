@@ -81,7 +81,7 @@ Steps:
 
 </body>
 
-routes.rb File:
+    routes.rb File:
 
 <body>
 
@@ -90,7 +90,7 @@ routes.rb File:
 </body>
 
 
-Sample Response:
+    Sample Response:
 
 <body>
 

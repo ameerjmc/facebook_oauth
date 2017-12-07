@@ -1,6 +1,6 @@
 # README
 
-### Facebook Oauth - Facebook Information get without any Library Files :smiley: :
+### Facebook Information get without any Library Files :smiley: :
    
     
 ![Alt text](https://github.com/ameerjmc/facebook_oauth/blob/master/fb.png)

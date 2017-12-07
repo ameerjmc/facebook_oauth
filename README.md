@@ -15,7 +15,7 @@ Steps:
 3.Get your app client_id and client_secret id
 
 
-### Facebook Login for Web and Mobile Devices Using Ruby on Rails
+### Facebook Login for Web and Mobile Devices Using Ruby on Rails :
 
 include the gem in your Gemfile:
 
@@ -39,7 +39,7 @@ Steps:
 3.rails g controller oauth facebook_oauth
 
 
-## facebook_oauth Functions
+## facebook_oauth Functions :
 
  Oauth.rb File
 
@@ -104,7 +104,8 @@ Steps:
   
 </body>
 
-### Sample Response
+
+### Sample Response :
 
 ![Alt text](https://github.com/ameerjmc/facebook_oauth/blob/master/res.png)
 

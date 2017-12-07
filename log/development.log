@@ -1,0 +1,291 @@
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (15.1ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (24.5ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT GET_LOCK(4951029258742160685, 0)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-12-07 05:26:36', '2017-12-07 05:26:36')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT RELEASE_LOCK(4951029258742160685)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/charges/new" for 127.0.0.1 at 2017-12-07 11:10:13 +0530
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.4) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.4) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-12-07 11:10:15 +0530
+  [1m[35m (73.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (70.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.4) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.4) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT GET_LOCK(4951029258742160685, 0)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK(4951029258742160685)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/charges/new" for 127.0.0.1 at 2017-12-07 11:11:07 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/charges/new"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-12-07 11:11:10 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ameer/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ameer/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (10.4ms)
+Completed 200 OK in 530ms (Views: 21.9ms)
+
+
+Started POST "/oauth" for 127.0.0.1 at 2017-12-07 11:31:49 +0530
+Processing by OauthController#facebook_oauth as */*
+  Parameters: {"code"=>"AQDauQfQf_Z1ZkUlkDEPeXlZxRl4B-qsTpBwczF4ocZ4-lSXnL8rnhXwN1ONQMHF1F5pCkO799S541WNhWeqI7hKbuhc0OW_ZnLQINH7p8nKJJ0DtE5KCoj0yiGqhcU37DVCXIurz8P-N7tbm2n0_idpsCYtwkg2_pRtq-ImebT1xfmF8pK0Ph9MH5yP1l-PYnBNPqAWbvSO5Q3NGGPY3pnCJMS7S5k_WfuFebw1wZrafLCNAWVx5Kjz8CX5_9OOMlm3KM18Ftqd05RN5syma9DK1hRy86v7PqyNMLhhpJjJSbiTLGv82pUALo2Hp-Bf4raWy92MetOKQg61WhR0ZLH-#_=_", "redirect_url"=>"https://nfnlabs.in/"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 4ms
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:195:in `handle_unverified_request'
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:227:in `handle_unverified_request'
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:222:in `verify_authenticity_token'
+activesupport (5.1.4) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.4) lib/active_support/callbacks.rb:197:in `block (2 levels) in halting'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.1.4) lib/active_support/callbacks.rb:198:in `block in halting'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.4) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/oauth" for 127.0.0.1 at 2017-12-07 11:32:29 +0530
+Processing by OauthController#facebook_oauth as */*
+  Parameters: {"code"=>"AQAzTd52YuMvELrg4TMMn0AARI5utMNvuNIt4ksxbaTc_v1-H2ovX9vDeHAhEUFZw3Kz1tZrWPiuZDMVFQl5HOCVxu0WDJ7C9Dgvw_jJKd_3fAXCzS4HsaMOVKD-jcY-WyarsdZJPpU2Q8BGEgkROzQ5C3Fgjueeyc6uTum1fpDvFpmit_6r8dJZjxx0A0R0V9GLQFsduk4jnKvNTh339ANkAnWOqIKzUGmIwInAlRdBxgvzlu7vzmjleF35oMF31pKfBXKuZ7EhIooacbrS8m43SbU-1PLD1ATh5mzTbCCZvPCCqpN3Y6Kup-92D3y-8my4PuKtPwJVR7Al_JKGR3GA#_=_", "redirect_url"=>"https://nfnlabs.in/"}
+Completed 200 OK in 144ms (Views: 2.9ms)
+
+
+Started POST "/oauth" for 127.0.0.1 at 2017-12-07 11:34:16 +0530
+Processing by OauthController#facebook_oauth as */*
+  Parameters: {"code"=>"AQATQ-eheL-omtIyrMaxBOZzvc-JjFNLne3uJLaLUZPKrfjnqkKtt3cgWLoz7MSGUqjXU-8mRBkKGCvIspToVB6HWcqfIEqojbWD54Sv99vkjsFKvj488Yd0-0lR-wBpuCZ-FfXi_xmb7xTNFVEgTegM55O9qlXzed3xewdkrW9O0IBeBIHUFcWjSx1i50IZ6qL2pWYBkQwtz8dIPHCzkaMlTqQlDcvk4Ma8tK2UZ_ycUnjHvsVU0nAfFtcAWd0G9b3ZVR4vy6wXnwiydoOqEdtu5bYORxeMjvhP8Yhtcjv9t4tayTuLPcgLRxLa0lyr0ra9m1YmUZh4LZ4pvnnwov4G#_=_", "redirect_url"=>"https://nfnlabs.in/"}
+Completed 200 OK in 901ms (Views: 1.0ms)
+
+
+Started POST "/oauth" for 127.0.0.1 at 2017-12-07 11:35:00 +0530
+Processing by OauthController#facebook_oauth as */*
+  Parameters: {"code"=>"AQBUfxMHm0ikRC4lEm7kI5Iqwdc3yZayVTlaLrgNISnLTFPkBikDVJEDVpCDD5aaudzRgnZGUEOjz-IspTX0P6NiHj-bRAUshcDhSxwofLix4rwXyzeL9yYOaBgMEWg0CI0GDO22Mm-FKGXwmKJX6QU_WotBEnMDVk3qOf1T6BSzwhJo0e1it4aoUMPnD-vfK2gf49p8VTMONJuhxxOepfkcOG061i3rZJ41xFB6X3_OuyhvQlVy9BSrEkFXOP5s0iCgBdLIn9NKfbGeOqjZwYPkKbGIt2NlsSeKN5yfE3CiHHcrsO8ySuw-ct43FMopaT6QPZChzD4Kc_9Kd9svABfn#_=_", "redirect_url"=>"https://nfnlabs.in/"}
+Completed 200 OK in 48ms (Views: 0.6ms)
+
+
+Started POST "/oauth" for 127.0.0.1 at 2017-12-07 11:35:48 +0530
+Processing by OauthController#facebook_oauth as */*
+  Parameters: {"code"=>"AQAmHpyZMEEeXmOllDFPl41q_P_nq9BG69vekYayGXyy-3yqy_c072oMAF_mOfuYuioD7ijqz73ErVMWLtViwAMqnxLKzjHfsSUa6dTrOI4l1ipprWSqcbs7MovBSbnUfw4t4gAsXg5LiKBS8j-o7GHDK3igpRce7OiHIZ7S2KxSy43s7EG2Jtlau7H4son70OCGC4-UkAM7STOt3bhEb9qcC_dFKTHw6Gr_LJm3jxt4_kePtIA-beQSkZYv2sfkyET0N6liUg0FwiZUTudh87qeRy3nGjchPG5QMCo3JMO2IYY_3VaL_eefX3fq3tX7JtzpXW86WJzBPn6rWZ-tDFg2#_=_", "redirect_url"=>"https://nfnlabs.in/"}
+Completed 200 OK in 1285ms (Views: 1.0ms)
+
+
+Started POST "/oauth" for 127.0.0.1 at 2017-12-07 11:36:29 +0530
+Processing by OauthController#facebook_oauth as */*
+  Parameters: {"code"=>"AQBkPKbbDv4cEpoCoJT0fLx9ZA860nzjvB5evbjEQfq8zgdNi9HYVvUfyOUmomiGqr_2cuHmLZM-rwrw21_FQdtPwEYqrhxxlPIxLh5MbhRBOwmqbSVW_MU51JQnDnoUstjW4DmQ9M6lOH9oxA3KPxoaJW1Y-fh3wBKLLeyw6FhL7Gy9MYdn9RlWPbKAdshgRTeHQRPgzTfnljEPtrZ5xMUk4sVlx9TRijtyIbsid-ljmMX_CsgcE3DVW_kHBBOYmSy4MzusypyDId3iU0tMyjpMyNxHb21rvp4XCrVyr8qu5i86kqTuSB2Q9U9V-fxSvXpd8bZsnc47zCM473V3vqFH#_=_", "redirect_url"=>"http://nfnlabs.in/"}
+Completed 200 OK in 580ms (Views: 0.6ms)
+
+
+Started POST "/oauth" for 127.0.0.1 at 2017-12-07 11:37:46 +0530
+Processing by OauthController#facebook_oauth as */*
+  Parameters: {"code"=>"AQCbgXXAWD3CMr8yYWAxgnM0tcErn0K3UozkWKa3jtt5BD7QoAv1azdhs2jLyDuT23BJh4XU-L2aXdkkcEgA-l6DgAP0NBUn3otp549z1x0jYe5yooLgQqbt1nkSDoo6kw7KBgJ559LGPlXCEGvMvfz2VrX3B_fpOHluqG4BmLHQlHnOIFCvQ3-2BI3ZuAo78-uVf_6GaKAzaFK_eN0am9JPbcS4_fLe9MeWbx4PpG4o1ZOH1ixYCpbntf9yT0kPgjkajXsNDVtNhAMpeI7Kh0MN4ceaBS1h6ouGD8ZoQ8Cpz3ooIOwPB1Bz0MT0xNiPfh6OnB-a61cORV1fx3P099Gs#_=_", "redirect_url"=>"http://nfnlabs.in/"}
+Completed 200 OK in 2ms (Views: 1.3ms)
+
+
+Started POST "/oauth" for 127.0.0.1 at 2017-12-07 11:39:01 +0530
+Processing by OauthController#facebook_oauth as */*
+  Parameters: {"code"=>"AQCAn0vUzrWNkEQzHW99Alfq38OGW_PAb7gKBZm-WukY4JJn9gzoJVGJws1ClryBuipCGqCDJqOVu4nSbhmllhyawnZYz8VUvaXsnwa2t-grcDigJJcENxZkGfAAHkAhvxsSfcvSkgthA3PhuHGy1Ls3Mwb3xWOWqaQ3kfRoX8O8Pqf8vuVXtQ4hHMGCF2vjPzq_EDf8OcrAgp9qOkLBgr2myFGFzxDzsZQrFzOyazSFxy5_n0WXfYZynkfIhnFM-RZklGD-Xj5FKWP5Bz6paGP6Pakwbx1KxNCKTct8l-GEQdpNhRRIlmRXtvocfGjyVZA2XwSboX-3765T-Uz3-Ank#_=_", "redirect_url"=>"http://nfnlabs.in/"}
+Completed 200 OK in 686ms (Views: 0.6ms)
+
+
+Started POST "/oauth" for 127.0.0.1 at 2017-12-07 11:40:11 +0530
+Processing by OauthController#facebook_oauth as */*
+  Parameters: {"code"=>"AQAreyHU-y8hka3pa6G_6UeygiKIyORwR48P8tcj9QV_AJ8vjnGyHb7RC_80lDVsazUzNHCUqSp5yP0DaQUXuc2TiPA7yXPV17mcGNjJrE695eM6lrxZkvIcAzsCiCVTdI2w44CzrIcYWEC_s6gQmn6bqdLBBCw2nxO1JwhHFmmMqlf1yOPxvl0BbY8DJL0qUBwOu4v5GhQk-qVzE19biXpQy9-0jZsjrK1Jlq1cysG2lUL6r7MKD5-PX4Ah4TybLvnuFQhUIde1E1AjtP30Kpweqwlkgl1sXrdflX5G6F0rdKPNePfmXEnE1FIuo8q1xHOhM1ad4IY2Ufh0hNZsO-J6#_=_", "redirect_url"=>"http://nfnlabs.in/"}
+Completed 200 OK in 1266ms (Views: 1.3ms)
+
+
+Started POST "/oauth" for 127.0.0.1 at 2017-12-07 11:41:14 +0530
+Processing by OauthController#facebook_oauth as */*
+  Parameters: {"code"=>"AQA0eyKUoDLNGyvSEIuj8hnqsRfldmve2cpKGTyu54JDUFvlfo-pDMM60lyMqpOd5SuSdi_pNT2ecOe6cdOfKHCcEZP0K4xcB22Sp6zJJgSVhUeI6qPp1AwYqPGEHMjdAfOP8cxUmvxeHPJPjwJf4iWzbrGk3l9AbuZLXyajkhNvLok23lDSk8rix3xmcgrtYn860_T_lWxZJPsAgw_oh1jFdTzEzRKSqZI5evVfPzNSYmMPEGEtaPKQcXlklrnFY-bOodoN1OLXrOnMIZuzrQbpWII4FLmjL3MbklEi9FN5xTWe-HG_pvDzzGqEqhO5aF1NYwXgaUyZiDNqgoVn639y#_=_", "redirect_url"=>"http://nfnlabs.in/"}
+Completed 200 OK in 470ms (Views: 1.2ms)
+
+
+Started POST "/oauth" for 127.0.0.1 at 2017-12-07 11:41:58 +0530
+Processing by OauthController#facebook_oauth as */*
+  Parameters: {"code"=>"AQD6-HY8f0GJgPFN198rWUbWgLcakvtCaxK3zROtA7f1bMQrWqBDIMyqtkuowpPIg0hTFHf7NjfG-4SmWn1aHHQbKs4kXEePGFgaSfkrjqkRvvvYNVreck4iVSTO7s9XxjW9K7BVdRl5NR7dRk9HTQzLUZigxG-Iir17Jd-oxHyTFlITT84rBGOs-VgUjiwV9qefvBDDwf_ORb6baxQlHmVgmM1pk53ZUEO009IIVC08TmJX-16OuwT1ol7JYSqu1zOkBPo94fvP4UW3hEgarekA_ssiZM5n6Qqu-oU5HIGC737X1zGBzZy1HPdV0dgwAkx2DYCKSChIZXwDqJuR8-p8#_=_", "redirect_url"=>"http://nfnlabs.in/"}
+Completed 200 OK in 445ms (Views: 0.7ms)
+
+
+Started POST "/oauth" for 127.0.0.1 at 2017-12-07 11:42:48 +0530
+Processing by OauthController#facebook_oauth as */*
+  Parameters: {"code"=>"AQAXtYMjjqFLMgpNyHXEainWzkCrY7xXwEve8oRLj-geh9uZEoR_SYQsH9bafKO8XHIlgKC4NgxPs4BLV-lT07iPMxAIrvPevWzsW1fFtY2tfPHfemFyYZoK8JDZETWk-DDmvNOqmpxPW9KeadZzjnW_R0goFkACBlcmbV89n3t6kq-8A1AyBolZQs3eHDHdvi4Gwvmf1ckgG2XEc_jjtM5dzirMsgf8B3ffXdlRQs_KFIDDA-NeufnAi7_SLPnaDqf4cztj_zFYt3PHB7b72g-_5aw0YvhHJazqLtP_-vOmab8_o7nEXk02iYO41Ykg40PO1mcTBt6lCJYf5Sq1PMu-#_=_", "redirect_url"=>"http://nfnlabs.in/"}
+Completed 200 OK in 1045ms (Views: 1.2ms)
+
+

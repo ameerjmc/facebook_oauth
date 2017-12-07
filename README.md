@@ -48,24 +48,24 @@ Steps:
 	 # Get accesstoken using facebook graph Api
       def self.facebookAccessTokenCheckWithCode(code,redirect_uri)
      
-      user = Hash.new
-      begin
-        
-          response = RestClient.get "#{'https://graph.facebook.com/oauth/access_token?client_id=1234&client_secret=1234&redirect_uri='}#{redirect_uri}#{'&code='}#{code}"
-        token_res = JSON.parse(response.body)
-        if (accessToken = token_res["access_token"])
-          user = facebookAccessTokenCheck(accessToken)
-        else
-          user["res"] = token_res
-          user["status"] = false
-        end
-        
-      rescue Exception => e
-        user["message"] = e.message
-        user["status"] = false
-      end
-      
-      return user
+	      user = Hash.new
+	      begin
+
+		  response = RestClient.get "#{'https://graph.facebook.com/oauth/access_token?client_id=1234&client_secret=1234&redirect_uri='}#{redirect_uri}#{'&code='}#{code}"
+		token_res = JSON.parse(response.body)
+		if (accessToken = token_res["access_token"])
+		  user = facebookAccessTokenCheck(accessToken)
+		else
+		  user["res"] = token_res
+		  user["status"] = false
+		end
+
+	      rescue Exception => e
+		user["message"] = e.message
+		user["status"] = false
+	      end
+
+	      return user
   
     end
   

@@ -1,8 +1,9 @@
 # README
 
 ### Facebook Oauth
-    
-    ![alt tag](https://github.com/ameerjmc/facebook_oauth/blob/master/fb.png)
+
+![Alt text](https://github.com/ameerjmc/facebook_oauth/blob/master/fb.png)
+
 
 Steps:
 
@@ -105,8 +106,9 @@ Steps:
   
 </body>
 
+### Sample Response
 
-    Sample Response:
+![Alt text](https://github.com/ameerjmc/facebook_oauth/blob/master/res.png)
 
 
 

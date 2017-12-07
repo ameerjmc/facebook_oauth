@@ -9,12 +9,9 @@ Steps:
 
 1.Create facebook developer acccount
 
-2.Go to facebook developer page and create App
+2.Go to facebook developer page then create App
 
 3.Get your app client_id and client_secret id
-
-4.Enter redirect url
-
 
 
 ### Facebook Login for Web and Mobile Devices Using Ruby on Rails

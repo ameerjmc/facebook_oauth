@@ -2,6 +2,7 @@
 
 ### Facebook Oauth
     
+    ![alt tag](https://github.com/ameerjmc/facebook_oauth/blob/master/fb.png)
 
 Steps:
 

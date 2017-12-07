@@ -96,11 +96,11 @@ Steps:
 
 </body>
 
-    routes.rb File:
+  routes.rb File:
 
 <body>
 
-  post 'oauth' => "oauth#facebook_oauth"
+    post 'oauth' => "oauth#facebook_oauth"
   
 </body>
 

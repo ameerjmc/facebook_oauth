@@ -46,7 +46,7 @@ Steps:
 <body>
 
 	 # Get accesstoken using facebook graph Api
-  def self.facebookAccessTokenCheckWithCode(code,redirect_uri)
+      def self.facebookAccessTokenCheckWithCode(code,redirect_uri)
      
       user = Hash.new
       begin
@@ -67,32 +67,32 @@ Steps:
       
       return user
   
-  end
+    end
   
     # Get information from facebook using accessToken
-  def self.facebookAccessTokenCheck(accessToken)
+    def self.facebookAccessTokenCheck(accessToken)
      
-     details = Hash.new
-      
-      begin
-         
-         response = RestClient.get "#{'https://graph.facebook.com/v2.8/me?fields=first_name,last_name,email,picture.type(small)&access_token='}#{accessToken}"
-         profile = JSON.parse(response.body)
-         details["unique_id"] =  profile['id']
-         details["email"] =  profile['email']
-         details["name"] = profile['first_name'] + profile["last_name"]
-         details["access_token"] = accessToken
-         details["image"] = profile["picture"]["data"]["url"]
-         details["provider"] = "facebook"
-      rescue Exception => e
-         details = e.message
-         details["status"] = false
+	     details = Hash.new
 
-      end
-      
-      return details
+	      begin
+
+		 response = RestClient.get "#{'https://graph.facebook.com/v2.8/me?fields=first_name,last_name,email,picture.type(small)&access_token='}#{accessToken}"
+		 profile = JSON.parse(response.body)
+		 details["unique_id"] =  profile['id']
+		 details["email"] =  profile['email']
+		 details["name"] = profile['first_name'] + profile["last_name"]
+		 details["access_token"] = accessToken
+		 details["image"] = profile["picture"]["data"]["url"]
+		 details["provider"] = "facebook"
+	      rescue Exception => e
+		 details = e.message
+		 details["status"] = false
+
+	      end
+
+	      return details
   
-  end 
+    end 
 
 </body>
 
